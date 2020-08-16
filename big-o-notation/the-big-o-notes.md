@@ -85,7 +85,7 @@ logAllPairsOfArray(boxes)
 The **O(n!)** represents *factorial* time -- we are adding a nested loop for every input. This is **the worst** possible Big O notation, and if your function has it, you are almost certainly doing something wrong.
 
 
-## About SCALABILITY
+## About scalability
 
 There's actually more to scalability than just **speed**. Another concern is also **memory**.  
   

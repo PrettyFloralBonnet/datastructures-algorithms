@@ -1,5 +1,5 @@
 # Arrays
-**Arrays** (sometimes also referred to as **lists**) organize data (items) sequentially, or one after the other in memory. Array items are stored in contiguous memory (which means in order).  
+**Arrays** organize data (items) sequentially, or one after the other in memory. Array items are stored in contiguous memory (which means in order).  
   
 Arrays may be the simplest and most widely used data structure. They have the least amount of rules, and the smallest memory footprint of any data structure.  
 

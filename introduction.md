@@ -32,7 +32,7 @@ Some of the most common operations performed on data structures are:
 * Access
 
 # DSA key examples
-Some of the most important data structures include:
+Some of the most important **data structures** include:
 * Arrays
 * Stacks
 * Queues
@@ -42,7 +42,7 @@ Some of the most important data structures include:
 * Graphs
 * Hash Tables
 
-Some of the key algorithms are:
+Some of the key **algorithms** are:
 * Sorting
 * Dynamic Programming
 * BFS/DFS (Searching)

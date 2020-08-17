@@ -15,4 +15,14 @@ function reverse(str) {
 }
 
 // ES6
-const reverse3 = str => str.split('').reverse().join('');
+const reverse = str => str.split('').reverse().join('');
+
+// explicit solution, not using the built in string to array conversion:
+
+function reverse(str) {
+    strBackwards = [];
+    for (let i = str.length - 1; i >= 0; i--) {
+        strBackwards.push(str[i]);
+    }
+    return strBackwards.join('');
+}

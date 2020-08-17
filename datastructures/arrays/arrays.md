@@ -32,7 +32,7 @@ STRINGS = ['a', 'b', 'c', 'd']
 STRINGS.append('e');  # O(1)
 STRINGS.pop();  # O(1)
 STRINGS.insert(0, 'x')  # O(n)
-STRINGS.insert(2, 'alien') # O(n); not the equivalent of splice, it but works here
+STRINGS.insert(2, 'alien')  # O(n); not the equivalent of splice, it but works here
 ```
 
 ## Static vs. dynamic arrays

@@ -25,12 +25,12 @@ function firstRecurring(array) {
 // also, if we have more than one recurring character,
 // the result is now different
 function improvedFirstRecurring(array) {
-    let map = {};
+    let arrayMap = {};
     for (let i = 0; i < array.length; i++) {
-        if (map[array[i]] !== undefined) {
+        if (arrayMap[array[i]] !== undefined) {
             return array[i];
         } else {
-            map[array[i]] = i;
+            arrayMap[array[i]] = i;
         }
     }
     return undefined;

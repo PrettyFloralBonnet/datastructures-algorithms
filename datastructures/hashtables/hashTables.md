@@ -8,9 +8,11 @@ A **hash function** is a function that generates **a value of fixed length** for
 
 ## Performance
 
-The immediate benefit is **really *fast* data access**. When you provide it with a key, the program will know basically immediately where the corresponding value is stored in memory.  
+Different types of hash functions (md5, SHA-256 etc.) take varying amounts of time to compute, making some less performant than others. However, hash table implementation is extremely optimized in most programming languages.  
   
-Different types of hashing functions (e.g. md5, SHA-256 etc.) take varying amounts of time to compute, making some less performant than others. However, hash table implementation is extremely optimized in most programming languages, with very fast **searches**, **lookups**, **inserts** and **deletes** (O(1)).
+The immediate benefit is **really *fast* data access**. When you provide it with a key, the program will know basically immediately where the corresponding value is stored in memory. Hash tables offer very fast **searches**, **lookups**, **inserts** and **deletes** (O(1)), assuming they have good collision resolution (see below).  
+  
+The main performance downside of hash tables is **slow key iteration** (O(n)).
 
 ## Hash collisions
 

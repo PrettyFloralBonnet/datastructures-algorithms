@@ -17,3 +17,9 @@ Different types of hashing functions (e.g. md5, SHA-256 etc.) take varying amoun
 The main drawback is the possibility of **hash collisions**. When data gets hashed, due to limited memory, there is a chance some data gets stored in address space in memory where some other data was already stored previously.  
   
 This slows down reading and writing, to a point where it basically becomes O(n) (or more specifically, O(n/k) where k is the size of the hash table).
+
+## Allowed key types
+
+This mostly depends on the language. The most common data type used for hash table keys is a **string**. In JavaScript they can be either strings or symbols. In Python, dictionary keys can be of any type as long as it's immutable.  
+  
+In JS, the Map data structure offers similar flexibility: keys can be of any data type (even functions). It also maintains insertion order (which Python dicts also do since Python 3.8).

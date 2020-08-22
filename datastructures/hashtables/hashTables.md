@@ -1,6 +1,6 @@
 # Hash Tables
 
-**Hash tables** are basically **key-value pairs**. The values are stored in memory based on the result of **hash functions** applied to the keys.  
+**Hash tables** are basically **key-value pairs**. The values are stored in memory (in spaces called **buckets**) based on the result of **hash functions** applied to the keys.  
 
 ## Hash function
 
@@ -14,7 +14,7 @@ Different types of hashing functions (e.g. md5, SHA-256 etc.) take varying amoun
 
 ## Hash collisions
 
-The main drawback is the possibility of **hash collisions**. When data gets hashed, due to limited memory, there is a chance some data gets stored in address space in memory where some other data was already stored previously.  
+The main drawback is the possibility of **hash collisions**. When data gets hashed, due to limited memory, there is a chance some data gets stored in address space (bucket) in memory where some other data was already stored.  
   
 This slows down reading and writing, to a point where it basically becomes O(n) (or more specifically, O(n/k) where k is the size of the hash table).
 

@@ -59,8 +59,8 @@ class LinkedList {
 
     /**
      * Inserts a new node into the linked list.
-     * @param {Number} index    Index at which the node is to be entered
-     * @param {any}    value    Value passed to the new node
+     * @param {Number} index    index at which the node is to be inserted
+     * @param {any}    value    value of the new node
      */
     insert(index, value) {
         if (index >= this.length) {

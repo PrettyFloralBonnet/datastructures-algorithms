@@ -72,7 +72,7 @@ class LinkedList {
 
         leadingNode.next = newNode;
         newNode.next = holdingPointer;
-        
+
         this.length++;
         return this;
     }

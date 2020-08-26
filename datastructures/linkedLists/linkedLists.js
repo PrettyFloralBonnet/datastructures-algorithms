@@ -14,6 +14,7 @@ class LinkedList {
         this.tail = this.head;
         this.length = 1;
     }
+
     _traverseToIndex(index) {
         if (index >= this.length) {
             return this.tail;
@@ -29,6 +30,7 @@ class LinkedList {
         }
         return currentNode
     }
+
     printList() {
         const array = [];
         let currentNode = this.head;
@@ -38,6 +40,7 @@ class LinkedList {
         }
         return array;
     }
+
     append(value) {
         const newNode = new Node(value);
         this.tail.next = newNode;
@@ -45,6 +48,7 @@ class LinkedList {
         this.length++;
         return this;
     }
+
     prepend(value) {
         const newNode = new Node(value);
         newNode.next = this.head;
@@ -76,6 +80,7 @@ class LinkedList {
         this.length++;
         return this;
     }
+
     remove(index) {
         if (index <= 0) {
             const holdingPointer = this.head.next;
@@ -96,6 +101,7 @@ class LinkedList {
         this.length--;
         return this;
     }
+
     reverse() {
         if (!this.head.next) {
             return this.head;

@@ -1,4 +1,4 @@
-# Hash Tables
+# Hash tables
 
 **Hash tables** are basically **key-value pairs**. The values are stored in memory (in spaces called **buckets**) based on the result of **hash functions** applied to the keys.  
 

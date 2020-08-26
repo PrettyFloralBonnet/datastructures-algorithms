@@ -1,4 +1,4 @@
-# Linked Lists
+# Linked lists
 
 ## Singly linked list
 

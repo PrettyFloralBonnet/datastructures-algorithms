@@ -1,17 +1,3 @@
-
-// let myLinkedList = {
-//     head: {
-//         value: 10,
-//         next: {
-//             value: 5,
-//             next: {
-//                 value: 16,
-//                 next: null
-//             }
-//         }
-//     }
-// }
-
 class Node {
     constructor(value) {
         this.value = value;
@@ -66,17 +52,27 @@ class LinkedList {
         this.length++;
         return this;
     }
+
+    /**
+     * Inserts a new node into the linked list.
+     * @param {Number} index    Index at which the node is to be entered
+     * @param {any}    value    Value passed to the new node
+     */
     insert(index, value) {
         if (index >= this.length) {
             return this.append(value);
         } else if (index <= 0) {
             return this.prepend(value);
         }
+
         const newNode = new Node(value);
-        const leader = this._traverseToIndex(index - 1)
-        const holdingPointer = leader.next;
-        leader.next = newNode;
+
+        const leadingNode = this._traverseToIndex(index - 1)
+        const holdingPointer = leadingNode.next;
+
+        leadingNode.next = newNode;
         newNode.next = holdingPointer;
+        
         this.length++;
         return this;
     }
@@ -121,7 +117,9 @@ class LinkedList {
 
 const myLinkedList = new LinkedList(10);
 
-myLinkedList.append(5);
-myLinkedList.append(16);
+myLinkedList.append(5).append(16);
+console.log(myLinkedList.length)
+
 myLinkedList.prepend(1);
+
 myLinkedList.insert(2, 99);

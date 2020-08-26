@@ -15,7 +15,7 @@ class LinkedList {
         this.length = 1;
     }
 
-    _traverseToIndex(index) {
+    _traverseToNodeAt(index) {
         if (index >= this.length) {
             return this.tail;
         }
@@ -43,7 +43,7 @@ class LinkedList {
         return nodeValues;
     }
 
-    append(value) {
+    appendNode(value) {
         const newNode = new Node(value);
         this.tail.next = newNode;
         this.tail = newNode;
@@ -51,7 +51,7 @@ class LinkedList {
         return this;
     }
 
-    prepend(value) {
+    prependNode(value) {
         const newNode = new Node(value);
         newNode.next = this.head;
         this.head = newNode;
@@ -66,16 +66,16 @@ class LinkedList {
      */
     insert(index, value) {
         if (index >= this.length) {
-            return this.append(value);
+            return this.appendNode(value);
         }
 
         if (index <= 0) {
-            return this.prepend(value);
+            return this.prependNode(value);
         }
 
         const newNode = new Node(value);
 
-        const leadingNode = this._traverseToIndex(index - 1)
+        const leadingNode = this._traverseToNodeAt(index - 1)
         const holdingPointer = leadingNode.next;
 
         leadingNode.next = newNode;
@@ -96,7 +96,7 @@ class LinkedList {
         if (index >= this.length) {
             index = this.length - 1;
         }
-        const leader = this._traverseToIndex(index -1);
+        const leader = this._traverseToNodeAt(index -1);
         const unwantedNode = leader.next;
         leader.next = unwantedNode.next;
         if (index === this.length - 1) {
@@ -127,9 +127,9 @@ class LinkedList {
 
 const myLinkedList = new LinkedList(10);
 
-myLinkedList.append(5).append(16);
+myLinkedList.appendNode(5).appendNode(16);
 console.log(myLinkedList.length)
 
-myLinkedList.prepend(1);
+myLinkedList.prependNode(1);
 
 myLinkedList.insert(2, 99);

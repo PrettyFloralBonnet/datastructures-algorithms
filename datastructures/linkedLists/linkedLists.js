@@ -19,9 +19,11 @@ class LinkedList {
         if (index >= this.length) {
             return this.tail;
         }
+
         if (index <= 0) {
             return this.head;
         }
+
         let counter = 0;
         let currentNode = this.head;
         while (counter !== index) {
@@ -31,14 +33,14 @@ class LinkedList {
         return currentNode
     }
 
-    printList() {
-        const array = [];
+    getNodeValues() {
+        const nodeValues = [];
         let currentNode = this.head;
         while (currentNode !== null) {
-            array.push(currentNode.value);
+            nodeValues.push(currentNode.value);
             currentNode = currentNode.next;
         }
-        return array;
+        return nodeValues;
     }
 
     append(value) {

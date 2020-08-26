@@ -67,7 +67,9 @@ class LinkedList {
     insert(index, value) {
         if (index >= this.length) {
             return this.append(value);
-        } else if (index <= 0) {
+        }
+
+        if (index <= 0) {
             return this.prepend(value);
         }
 

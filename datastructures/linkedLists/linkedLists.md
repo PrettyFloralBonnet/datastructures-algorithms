@@ -4,7 +4,9 @@
 
 A **singly linked list** contains a list of **nodes** consisting of two elements: the **value** and a **pointer** that links to the next node. The first node in a singly linked list is referred to as the **head**, and the last node is referred to as the **tail**. Sometimes the latter may also refer to the last node and all the previous nodes except for the head.  
   
-Linked lists are also "**null-terminated**", which means that the last node points to null.
+A **doubly linked list** is similar, except their nodes also contain an additional pointer aimed at the previous node, thus allowing for backwards traversal (which makes searching through them more efficient in some cases, at the cost of some extra memory necessary to accomodate the additional pointers).
+
+Linked lists are **null-terminated**, which means that the last node points to null.
 
 ## Performance and use cases
 

@@ -119,9 +119,11 @@ class LinkedList {
         if (!this.head.next) {
             return this.head;
         }
+
         let firstItem = this.head;
         this.tail = this.head;
         let secondItem = firstItem.next;
+
         while (secondItem) {
             const temp = secondItem.next;
             secondItem.next = firstItem;
@@ -142,3 +144,9 @@ console.log(myLinkedList.length)
 myLinkedList.prependNode(1);
 
 myLinkedList.insert(2, 99);
+
+myLinkedList.remove(1)
+
+myLinkedList.reverse()
+
+print(myLinkedList.getNodeValues())

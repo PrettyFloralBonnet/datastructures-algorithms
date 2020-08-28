@@ -60,7 +60,7 @@ class LinkedList {
     }
 
     /**
-     * Inserts a new node into the linked list.
+     * Inserts a new node into the list.
      * @param {Number} index    index at which the node is to be inserted
      * @param {any}    value    value of the new node
      */
@@ -85,6 +85,10 @@ class LinkedList {
         return this;
     }
 
+    /**
+     * Removes the node at the given index from the list.
+     * @param {Number} index    index of the node to be removed
+     */
     remove(index) {
         if (index <= 0) {
             const holdingPointer = this.head.next;
@@ -92,16 +96,21 @@ class LinkedList {
             this.head = holdingPointer;
             this.length--;
             return this;
-        };
+        }
+
         if (index >= this.length) {
             index = this.length - 1;
         }
-        const leader = this._traverseToNodeAt(index -1);
-        const unwantedNode = leader.next;
-        leader.next = unwantedNode.next;
+
+        const leadingNode = this._traverseToNodeAt(index -1);
+        const nodeToRemove = leadingNode.next;
+
+        leadingNode.next = nodeToRemove.next;
+
         if (index === this.length - 1) {
-            this.tail = leader
-        };
+            this.tail = leadingNode;
+        }
+
         this.length--;
         return this;
     }

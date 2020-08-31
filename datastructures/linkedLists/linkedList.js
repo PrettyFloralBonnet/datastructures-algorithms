@@ -10,7 +10,7 @@ class LinkedList {
         this.head = {
             value: value,
             next: null
-        }
+        };
         this.tail = this.head;
         this.length = 1;
     }
@@ -28,9 +28,9 @@ class LinkedList {
         let currentNode = this.head;
         while (counter !== index) {
             currentNode = currentNode.next;
-            counter++
+            counter++;
         }
-        return currentNode
+        return currentNode;
     }
 
     getNodeValues() {
@@ -102,7 +102,7 @@ class LinkedList {
             index = this.length - 1;
         }
 
-        const leadingNode = this._traverseToNodeAt(index -1);
+        const leadingNode = this._traverseToNodeAt(index - 1);
         const nodeToRemove = leadingNode.next;
 
         leadingNode.next = nodeToRemove.next;

@@ -5,10 +5,13 @@ class Node:
 
 
 class LinkedList:
-    def __init__(self, value):
+    def __init__(self, value, *args):
         self.head = Node(value)
         self.tail = self.head
         self.length = 1
+        if args:
+            for arg in args:
+                self.appendNode(arg)
 
     def __len__(self):
         return self.length

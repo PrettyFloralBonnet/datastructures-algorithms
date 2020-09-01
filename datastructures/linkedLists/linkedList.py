@@ -2,18 +2,16 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-    
-    def __setattr__(self, key, value):
-        return setattr(self, key, value)
+
 
 class LinkedList:
     def __init__(self, value):
-        self.head = {
-            'value': value,
-            'next': None 
-        }
+        self.head = Node(value)
         self.tail = self.head
         self.length = 1
+
+    def __len__(self):
+        return self.length
 
     def _traverseToNodeAt(self, index):
         if index >= self.length:
@@ -105,18 +103,18 @@ class LinkedList:
         self.head = first_item
         return self
 
-if __name__ == '__main__':
-    myLinkedList = LinkedList(10)
 
-    myLinkedList.appendNode(5).appendNode(16)
-    print(myLinkedList.length)
+myLinkedList = LinkedList(10)
 
-    myLinkedList.prependNode(1)
+myLinkedList.appendNode(5).appendNode(16)
+print(myLinkedList.length)
 
-    myLinkedList.insert(2, 99)
+myLinkedList.prependNode(1)
 
-    myLinkedList.remove(1)
+myLinkedList.insert(2, 99)
+
+myLinkedList.remove(1)
     
-    myLinkedList.reverse()
+myLinkedList.reverse()
 
-    print(myLinkedList.getNodeValues())
+print(myLinkedList.getNodeValues())

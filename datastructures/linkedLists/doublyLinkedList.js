@@ -3,7 +3,7 @@ import { LinkedList, Node} from "linkedList.js"
 
 class DoublyLinkedNode extends Node {
     constructor(value) {
-        super(value, value)
+        super(value, value);
         this.previous = null;
     }
 }
@@ -11,8 +11,8 @@ class DoublyLinkedNode extends Node {
 
 class DoublyLinkedList extends LinkedList {
     constructor(value) {
-        super(value, value)
-        this.head.previous = null
+        super(value, value);
+        this.head.previous = null;
     }
 
     appendNode(value) {
@@ -57,32 +57,43 @@ class DoublyLinkedList extends LinkedList {
         return this;
     }
 
-    // remove(index) {
-    //     if (index <= 0) {
-    //         const nodeToRemove = this.head;
-    //         this.head = nodeToRemove.next;
-    //         this.length--;
-    //         return this;
-    //     }
+    remove(index) {
+        if (index <= 0) {
+            const holdingPointer = this.head.next;
+            delete this.head;
+            this.head = holdingPointer;
+            this.head.previous = null;
+            this.length--;
+            return this;
+        }
 
-    //     if (index >= this.length) {
-    //         index = this.length - 1;
-    //     }
-    //     const leader = this._traverseToIndex(index -1);
-    //     const unwantedNode = leader.next;
-    //     leader.next = unwantedNode.next;
-    //     leader.next.previous = leader;
-    //     if (index === this.length - 1) {
-    //         this.tail = leader
-    //     };
-    //     this.length--;
-    //     return this;
-    // }
+        if (index >= this.length) {
+            index = this.length - 1;
+        }
+
+        const leadingNode = this._traverseToNodeAt(index - 1);
+        const followingNode = this._traverseToNodeAt(index + 1);
+        
+        leadingNode.next = followingNode;
+        followingNode.previous = leadingNode;
+
+        if (index === this.length - 1) {
+            this.tail = leadingNode;
+        }
+
+        this.length--;
+        return this;
+    }
 }
 
 let myDoublyLinkedList = new DoublyLinkedList(10);
 
 myDoublyLinkedList.appendNode(5).appendNode(16);
+
 myDoublyLinkedList.prependNode(1);
+
 myDoublyLinkedList.insert(2, 99);
-// myDoublyLinkedList.remove(1);
+
+myDoublyLinkedList.remove(1);
+
+myDoublyLinkedList.getNodeValues();

@@ -5,6 +5,7 @@ class Node {
     }
 }
 
+
 class LinkedList {
     constructor(value) {
         this.head = {
@@ -139,14 +140,14 @@ class LinkedList {
 const myLinkedList = new LinkedList(10);
 
 myLinkedList.appendNode(5).appendNode(16);
-console.log(myLinkedList.length)
+console.log(myLinkedList.length);
 
 myLinkedList.prependNode(1);
 
 myLinkedList.insert(2, 99);
 
-myLinkedList.remove(1)
+myLinkedList.remove(1);
 
-myLinkedList.reverse()
+myLinkedList.reverse();
 
-print(myLinkedList.getNodeValues())
+console.log(myLinkedList.getNodeValues());

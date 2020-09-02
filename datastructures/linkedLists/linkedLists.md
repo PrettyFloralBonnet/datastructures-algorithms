@@ -16,4 +16,4 @@ In general, linked lists have fast **prepends** and **appends** (O(1)) and, at w
 
 ## Pointers
 
-A **pointer** is a reference to another place in memory. In JavaScript (and other automaticall garbage collected languages), an object is only stored in memory as long as a reference to it exists somewhere in the code. When there are no references (pointers) left, the object is deleted.
+A **pointer** is a reference to another place in memory. In JavaScript (and other automatically garbage collected languages), an object is only stored in memory as long as a reference to it exists somewhere in the code. When there are no references (pointers) left, the object is deleted.

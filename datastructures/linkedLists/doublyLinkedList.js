@@ -1,104 +1,88 @@
+import { LinkedList, Node} from "linkedList.js"
 
-class Node {
+
+class DoublyLinkedNode extends Node {
     constructor(value) {
-        this.value = value;
-        this.next = null;
+        super(value, value)
         this.previous = null;
     }
 }
 
-class DoublyLinkedList {
+
+class DoublyLinkedList extends LinkedList {
     constructor(value) {
-        this.head = {
-            value: value,
-            next: null,
-            previous: null
-        }
-        this.tail = this.head;
-        this.length = 1;
+        super(value, value)
+        this.head.previous = null
     }
-    _traverseToIndex(index) {
-        if (index >= this.length) {
-            return this.tail;
-        }
-        if (index <= 0) {
-            return this.head;
-        }
-        let counter = 0;
-        let currentNode = this.head;
-        while (counter !== index) {
-            currentNode = currentNode.next;
-            counter++
-        }
-        return currentNode
-    }
-    printList() {
-        const array = [];
-        let currentNode = this.head;
-        while (currentNode !== null) {
-            array.push(currentNode.value);
-            currentNode = currentNode.next;
-        }
-        return array;
-    }
-    append(value) {
-        const newNode = new Node(value);
+
+    appendNode(value) {
+        const newNode = new DoublyLinkedNode(value);
         newNode.previous = this.tail;
         this.tail.next = newNode;
         this.tail = newNode;
         this.length++;
         return this;
     }
-    prepend(value) {
-        const newNode = new Node(value);
+
+    prependNode(value) {
+        const newNode = new DoublyLinkedNode(value);
         newNode.next = this.head;
         this.head.previous = newNode;
         this.head = newNode;
         this.length++;
         return this;
     }
+
     insert(index, value) {
         if (index >= this.length) {
-            return this.append(value);
-        } else if (index <= 0) {
-            return this.prepend(value);
+            return this.appendNode(value);
         }
-        const newNode = new Node(value);
-        const leader = this._traverseToIndex(index - 1)
-        const follower = leader.next;
-        leader.next = newNode;
-        newNode.next = follower;
-        newNode.previousSibling = leader;
-        follower.previous = newNode;
+
+        if (index <= 0) {
+            return this.prependNode(value);
+        }
+
+        const newNode = new DoublyLinkedNode(value);
+
+        const leadingNode = this._traverseToNodeAt(index - 1);
+        const followingNode = leadingNode.next;
+
+        newNode.next = followingNode;
+        newNode.previous = leadingNode;
+        
+        leadingNode.next = newNode;
+        followingNode.previous = newNode;
+
         this.length++;
         return this;
     }
-    remove(index) {
-        if (index <= 0) {
-            const unwantedNode = this.head;
-            this.head = unwantedNode.next;
-            this.length--;
-            return this;
-        };
-        if (index >= this.length) {
-            index = this.length - 1;
-        }
-        const leader = this._traverseToIndex(index -1);
-        const unwantedNode = leader.next;
-        leader.next = unwantedNode.next;
-        leader.next.previous = leader;
-        if (index === this.length - 1) {
-            this.tail = leader
-        };
-        this.length--;
-        return this;
-    }
+
+    // remove(index) {
+    //     if (index <= 0) {
+    //         const nodeToRemove = this.head;
+    //         this.head = nodeToRemove.next;
+    //         this.length--;
+    //         return this;
+    //     }
+
+    //     if (index >= this.length) {
+    //         index = this.length - 1;
+    //     }
+    //     const leader = this._traverseToIndex(index -1);
+    //     const unwantedNode = leader.next;
+    //     leader.next = unwantedNode.next;
+    //     leader.next.previous = leader;
+    //     if (index === this.length - 1) {
+    //         this.tail = leader
+    //     };
+    //     this.length--;
+    //     return this;
+    // }
 }
 
-myLinkedList = new DoublyLinkedList(10);
+let myDoublyLinkedList = new DoublyLinkedList(10);
 
-myLinkedList.append(5);
-myLinkedList.append(16);
-myLinkedList.prepend(1);
-myLinkedList.insert(2, 99);
-myLinkedList.append(13);
+myDoublyLinkedList.appendNode(5).appendNode(16);
+myDoublyLinkedList.prependNode(1);
+myDoublyLinkedList.insert(2, 99);
+// myDoublyLinkedList.remove(1);

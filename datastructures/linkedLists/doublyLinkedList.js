@@ -1,4 +1,4 @@
-import { LinkedList, Node} from "linkedList.js"
+import { LinkedList, Node } from "linkedList.js"
 
 
 class DoublyLinkedNode extends Node {
@@ -58,10 +58,10 @@ class DoublyLinkedList extends LinkedList {
     }
 
     remove(index) {
+        const removingLastItem = index === this.length - 1
+
         if (index <= 0) {
-            const holdingPointer = this.head.next;
-            delete this.head;
-            this.head = holdingPointer;
+            this.head = this.head.next;
             this.head.previous = null;
             this.length--;
             return this;
@@ -72,17 +72,22 @@ class DoublyLinkedList extends LinkedList {
         }
 
         const leadingNode = this._traverseToNodeAt(index - 1);
-        const followingNode = this._traverseToNodeAt(index + 1);
         
-        leadingNode.next = followingNode;
-        followingNode.previous = leadingNode;
-
-        if (index === this.length - 1) {
+        if (!removingLastItem) {
+            const followingNode = this._traverseToNodeAt(index + 1);
+            followingNode.previous = leadingNode;
+            leadingNode.next = followingNode;
+        } else {
+            leadingNode.next = null
             this.tail = leadingNode;
         }
 
         this.length--;
         return this;
+    }
+
+    reverse() {
+        console.log('Not yet implemented.')
     }
 }
 

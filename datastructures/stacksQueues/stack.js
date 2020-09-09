@@ -5,6 +5,8 @@ class Node {
     }
 }
 
+
+// implementation using a linked list
 class Stack {
     constructor() {
         this.top = null;
@@ -32,6 +34,33 @@ class Stack {
 
     isEmpty() {
         if (!this.top) return true;
+        return false;
+    }
+}
+
+
+// implementation using an array
+class ArrayBasedStack {
+    constructor() {
+        this.array = [];
+    }
+
+    peek() {
+        return this.array[this.array.length - 1];
+    }
+
+    push(value) {
+        this.array.push(value);
+        return this;
+    }
+
+    pop(value) {
+        this.array.pop();
+        return this;
+    }
+
+    isEmpty() {
+        if (!this.array.length) return true;
         return false;
     }
 }

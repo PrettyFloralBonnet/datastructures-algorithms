@@ -21,14 +21,18 @@ class Stack {
     push(value) {
         const previousTop = this.top;
         this.top = new Node(value);
+        if (!this.length) this.bottom = this.top;
         this.top.next = previousTop;
-        return this
+        this.length++;
+        return this;
     }
 
     pop() {
         const poppedItem = this.top;
         if (!poppedItem) return null;
         this.top = this.top.next;
+        this.length--;
+        if (!this.length) this.bottom = null;
         return poppedItem;
     }
 

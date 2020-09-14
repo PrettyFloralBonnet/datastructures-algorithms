@@ -40,3 +40,25 @@ class Stack:
         if self.top is None:
             return True
         return False
+
+
+# implementation using an array
+class ListBasedStack:
+    def __init__(self):
+        self.stack_list = []
+
+    def peek(self):
+        return self.stack_list[len(self) - 1]
+
+    def push(self, value):
+        self.stack_list.append(value)
+        return self
+
+    def pop(self):
+        self.stack_list.pop(0)
+        return self
+
+    def isEmpty(self):
+        if len(self) == 0:
+            return True
+        return False

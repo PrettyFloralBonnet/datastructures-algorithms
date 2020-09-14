@@ -58,7 +58,7 @@ class ArrayBasedStack {
         return this;
     }
 
-    pop(value) {
+    pop() {
         this.array.pop();
         return this;
     }

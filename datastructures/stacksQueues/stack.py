@@ -42,20 +42,20 @@ class Stack:
         return False
 
 
-# implementation using an array
+# implementation using a list
 class ListBasedStack:
     def __init__(self):
-        self.stack_list = []
+        self.stack_element_list = []
 
     def peek(self):
-        return self.stack_list[len(self) - 1]
+        return self.stack_element_list[len(self) - 1]
 
     def push(self, value):
-        self.stack_list.append(value)
+        self.stack_element_list.append(value)
         return self
 
     def pop(self):
-        self.stack_list.pop(0)
+        self.stack_element_list.pop(0)
         return self
 
     def isEmpty(self):

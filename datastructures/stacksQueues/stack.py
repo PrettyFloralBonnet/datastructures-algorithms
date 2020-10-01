@@ -1,7 +1,4 @@
-class Node:
-    def __init__(self, value):
-        self.value = value
-        self.next = None
+from nodeClass import Node
 
 
 # implementation using a linked list

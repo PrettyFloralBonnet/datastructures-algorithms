@@ -4,4 +4,8 @@
 An example of a tree data structure is the **DOM**. Also, a **linked list** is technically a type of tree, with a single path, but a node in a tree can only point to the child (nodes don't have to reference the parent).
 
 ## Binary Tree
-Each node can have either 0, 1 or 2 children. Each child can only have one parent. A **full binary tree** is a binary tree that has no gaps - all the leaf nodes are full. There is no node that only has 1 child - all nodes have either 0 children, or 2 children. A **perfect binary tree** is a full binary tree that has its bottom layer completely filled. With perfect binary trees, the number of nodes doubles each time we go down a level, and the sum of nodes on the last level is equal to the sum of nodes on all other levels, plus one. This kind of binary tree has an O(log n).
+Each node can have either 0, 1 or 2 children. Each child can only have one parent.  
+
+In a **full binary tree** there is no node that would only have 1 child - instead, all nodes have either 0 children, or 2 children.  
+
+A **perfect binary tree** is a full binary tree where the number of nodes doubles each time we go down a level, and the sum of nodes on the last level is equal to the sum of nodes on all other levels, plus one. This kind of binary tree has an O(log n).

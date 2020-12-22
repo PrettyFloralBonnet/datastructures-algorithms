@@ -20,3 +20,8 @@ Where `h` is the height of the tree (the number of levels it has). In other word
 ```log(nodes) = h - 1```
 
 Since this is a Big O calculation, the "minus one" at the end is insignificant.
+
+## Binary Search Tree
+For a tree to qualify as a binary search tree, all the nodes to the right of any parent node must store values greater than the value of that parent node, and all the nodes to the left of their parent node must store values lesser than the value of the parent node. Also, every node can only have up to two children.  
+
+A binary search tree has fast lookups, insertions and deletions (all at O(log n)).

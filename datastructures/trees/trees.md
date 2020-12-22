@@ -8,4 +8,15 @@ Each node can have either 0, 1 or 2 children. Each child can only have one paren
 
 In a **full binary tree** there is no node that would only have 1 child - instead, all nodes have either 0 children, or 2 children.  
 
-A **perfect binary tree** is a full binary tree where the number of nodes doubles each time we go down a level, and the sum of nodes on the last level is equal to the sum of nodes on all other levels, plus one. This kind of binary tree has an O(log n).
+A **perfect binary tree** is a full binary tree where the number of nodes doubles each time we go down a level, and the sum of nodes on the last level is equal to the sum of nodes on all other levels, plus one. This kind of binary tree has an O(log n), which is very fast (faster than linear time O(n), though a bit slower than O(1)) and about half of its data can be found on the bottom level.
+
+### Number of nodes in a perfect binary tree
+The number of nodes in a perfect binary tree can be calculated using the following formula:  
+
+```2^h - 1```
+
+Where `h` is the height of the tree (the number of levels it has). In other words:
+
+```log(nodes) = h - 1```
+
+Since this is a Big O calculation, the "minus one" at the end is insignificant.

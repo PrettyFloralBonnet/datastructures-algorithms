@@ -22,6 +22,11 @@ Where `h` is the height of the tree (the number of levels it has). In other word
 Since this is a Big O calculation, the "minus one" at the end is insignificant.
 
 ## Binary Search Tree
-For a tree to qualify as a binary search tree, all the nodes to the right of any parent node must store values greater than the value of that parent node, and all the nodes to the left of their parent node must store values lesser than the value of the parent node. Also, every node can only have up to two children.  
+For a binary tree to qualify as a binary search tree, all the nodes to the right of any parent node must store values greater than the value of that parent node, and all the nodes to the left of their parent node must store values lesser than the value of the parent node. Also, every node can only have up to two children.  
 
 A binary search tree has fast lookups, insertions and deletions (all at O(log n)).
+
+### Balanced vs. unbalanced binary search trees
+A common problem with BSTs is balance. If we keep inserting values in such a way that they always go to the right of the parent node, eventually a BST turns into what basically is a linked list, and we're no longer doing O(log n) operations while traversing it (instead they become O(n)).  
+
+To balance BSTs, we can create certain types of them, e.g. **AVL Trees** or **Red Black Trees**.

@@ -45,6 +45,8 @@ class BinarySearchTree {
         let currentNode = this.root;
 
         while (true) {
+            if (!currentNode) return false;
+
             if (value === currentNode.value) {
                 return true;
             } else if (value < currentNode.value) {
@@ -52,8 +54,6 @@ class BinarySearchTree {
             } else {
                 currentNode = currentNode.right;
             }
-
-            if (!currentNode) return false;
         }
     }
 }

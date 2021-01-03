@@ -29,4 +29,4 @@ A binary search tree has fast lookups, insertions and deletions (all at O(log n)
 ### Balanced vs. unbalanced binary search trees
 A common problem with BSTs is balance. If we keep inserting values in such a way that they always go to the right of the parent node, eventually a BST turns into what basically is a linked list, and we're no longer doing O(log n) operations while traversing it (instead they become O(n)).  
 
-To balance BSTs, we can create certain types of them, e.g. **AVL Trees** or **Red Black Trees**.
+To balance BSTs, we can create certain types of them, e.g. **AVL Trees** or **Red Black Trees** (or, more often, use a library that already implements them). These two types of trees will recover the state of balance automatically, by moving their elements around on unbalanced inserts.

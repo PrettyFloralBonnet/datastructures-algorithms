@@ -30,3 +30,13 @@ A binary search tree has fast lookups, insertions and deletions (all at O(log n)
 A common problem with BSTs is balance. If we keep inserting values in such a way that they always go to the right of the parent node, eventually a BST turns into what basically is a linked list, and we're no longer doing O(log n) operations while traversing it (instead they become O(n)).  
 
 To balance BSTs, we can create certain types of them, e.g. **AVL Trees** or **Red Black Trees** (or, more often, use a library that already implements them). These two types of trees will recover the state of balance automatically, by moving their elements around on unbalanced inserts.
+
+## Binary Heap
+A **binary heap** is a type of tree in which every node has a higher value than any node on the level below it (the parent value is always greater than the value of any of its children).  
+
+The lookup operation is O(n), whereas inserts and deletes are both O(log n). Binary heaps are pretty good for performing comparisons, and therefore for constructing **priority queues**.  
+
+A heap data structure should not be confused with a memory heap. The naming is coincidental.
+
+## Trie
+A specialized tree most often used to search through text. It allows us to really quickly find out if a word (or a part of a word) exists in a body of text.

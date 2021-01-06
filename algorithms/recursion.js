@@ -17,7 +17,8 @@ function findFactorialIterative(number) {
 // (0, 1, 1, 2, 3, 5, 8, 13, 21, 34...) under the given index
 
 function fibonacciRecursive(index) {
-
+    if (index < 2) return index;
+    return fibonacciRecursive(index - 1) + fibonacciRecursive(index - 2);
 }
 
 function fibonacciIterative(index) {

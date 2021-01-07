@@ -35,3 +35,24 @@ function fibonacciIterative(index) {
     }
     return thirdNumber;
 }
+
+// reverse a string
+
+function reverseString(str) {
+    let arr = str.split("");
+    let arrReversed = [];
+    function addToArray(array) {
+        if (array.length > 0) {
+            arrReversed.push(array.pop());
+            addToArray(array);
+        }
+        return;
+    }
+    addToArray(arr);
+    return arrReversed.join("");
+}
+
+function reverseStringRecursive(str) {
+    if (str === "") return "";
+    return reverseStringRecursive(str.substr(1)) + str.charAt(0);
+}

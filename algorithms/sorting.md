@@ -1,17 +1,17 @@
 # Sorting
 ## Comparison sorts
-The three most commonly used sorting algorithms are:
+**Comparison sorts** are sorting algorithms that work by comparing the values of elements in the collections they are applied to. Three simple kinds of comparison sorts are:
 * Bubble Sort
 * Selection Sort
 * Insertion Sort
 
-Then there are two more advanced ones, which usually outperform the previous three:
+Out of these three, the first two are mostly used for educational purposes. The third one, insertion sort, is sometimes used in real life with small data sets (or nearly sorted ones), because of its properties (described below).
+
+Then there are two slightly more advanced comparison sorts, which usually outperform the previous three, and thus are among the most commonly used:
 * Merge Sort
 * Quick Sort
 
-All of them are **comparison sorts**, which means they work by comparing the values of elements in the collections they are applied to.
-
-**************************
+***
 
 ### Bubble Sort
 Takes pairs of elements in the unsorted collection and compares them, pair by pair, switching the two elements in each pair around until all are sorted. Easy on memory use, but not very efficient.
@@ -19,12 +19,14 @@ Takes pairs of elements in the unsorted collection and compares them, pair by pa
 ### Selection Sort
 Traverses the collection one element at a time, takes note of the element that should go first according to the sorting method (e.g. the smallest one), and moves it to the beginning of the collection. Then traverses the collection again until all elements are sorted. Similar to bubble sort in its low efficiency (offset slightly by low memory use).
 
+***
+
 ### Insertion Sort
 It inspects elements one by one, and places them in their "correct" spots relative to the ones inspected before (e.g. when sorting numbers from smallest to largest and going through a list like `[3, 6, 2, 8, 12, 4]`, it will look at the first two items and leave them alone, then take `2` and place it at the beginning, then look at `8` and `12` and also leave each of them alone, and then finally look at `4` and place it between `3` and `6`.)
 
 Still not the most efficient overall, but decently fast in small data sets, and also in cases where the collection is likely to be already sorted or close to sorted. Best case scenario is actually O(n). Worst case is still O(n^2).
 
-**************************
+***
 
 ### Merge Sort
 Divides the collection in half multiple times, until there are only pairs of individual elements left. It sorts the elements in each pair, and then combines the sorted pairs back into larger components, until it rebuilds the entire collection.

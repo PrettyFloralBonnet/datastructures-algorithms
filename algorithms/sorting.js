@@ -1,6 +1,6 @@
 const numbers = [88, 46, 7, 9, 12, 83, 47, 65, 32, 2, 80];
 
-function bubbleSort(arr) {  // O(n^2)
+function bubbleSort(arr) {
     for (let i = 0; i < arr.length; i++) {
         for (let j = 0; j < arr.length; j++) {
             if (arr[j] > arr[j + 1]) {
@@ -12,7 +12,7 @@ function bubbleSort(arr) {  // O(n^2)
     }
 }
 
-function selectionSort(arr) {  // O(n^2)
+function selectionSort(arr) {
     for (let i = 0; i < arr.length; i++) {
         let indexOfSmallestNumber = i;
         let smallestNumber = arr[i];
@@ -26,7 +26,7 @@ function selectionSort(arr) {  // O(n^2)
     }
 }
 
-function insertionSort(arr) {  // best case is O(n)
+function insertionSort(arr) {
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] < arr[0]) {
             arr.unshift(arr.splice(i, 1)[0]);
@@ -61,4 +61,38 @@ function mergeSort(arr) {
     const right = arr.slice(middle);
 
     return _merge(mergeSort(left), mergeSort(right));
+}
+
+function _partition(arr, pivot, left, right) {
+    let pivotValue = arr[pivot];
+    let partitionIndex = left;
+
+    for (let i = left; i < right; i++) {
+        if (arr[i] < pivotValue) {
+            _swap(arr, i, partitionIndex);
+            partitionIndex++;
+        }
+    }
+    _swap(arr, right, partitionIndex);
+    return partitionIndex;
+}
+
+function _swap(arr, firstIndex, secondIndex) {
+    var temp = arr[firstIndex];
+    arr[firstIndex] = arr[secondIndex];
+    arr[secondIndex] = temp;
+}
+
+function quickSort(arr, left=0, right=arr.length - 1) {
+    let pivot;
+    let partitionIndex;
+
+    if (left < right) {
+        pivot = right;
+        partitionIndex = _partition(arr, pivot, left, right);
+
+        quickSort(arr, left, partitionIndex - 1);
+        quickSort(arr, partitionIndex + 1, right);
+    }
+    return arr;
 }

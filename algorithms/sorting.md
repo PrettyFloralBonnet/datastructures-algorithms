@@ -27,3 +27,8 @@ Still not the most efficient overall, but decently fast in small data sets, and 
 Divides the collection in half multiple times, until there are only pairs of individual elements left. It sorts the elements in each pair, and then combines the sorted pairs back into larger components, until it rebuilds the entire collection.
 
 It has the time complexity of O(n log n). It is also **stable**, which means that if there are equivalent elements in the unsorted collection, their order relative to each other will be maintained.
+
+## Quick Sort
+Picks a random element in the collection as the **pivot point** and sorts the remaining elements in relation to that point, which means all elements that should precede it go to the left, and all elements that should come after go to the right. That way the proper position of the pivot point element in the collection is determined, and this operation repeats for the two subcollections on either side of it.
+
+It's worst case scenario time complexity is O(n^2) - this occurs if the pivot point is either the first or the last item in the collection. However, on average it's O(n log(n)). It's space complexity is O(log(n)).

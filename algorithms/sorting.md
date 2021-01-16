@@ -31,4 +31,4 @@ It has the time complexity of O(n log n). It is also **stable**, which means tha
 ## Quick Sort
 Picks a random element in the collection as the **pivot point** and sorts the remaining elements in relation to that point, which means all elements that should precede it go to the left, and all elements that should come after go to the right. That way the proper position of the pivot point element in the collection is determined, and this operation repeats for the two subcollections on either side of it.
 
-It's worst case scenario time complexity is O(n^2) - this occurs if the pivot point is either the first or the last item in the collection. However, on average it's O(n log(n)). It's space complexity is O(log(n)).
+It's worst case scenario time complexity is O(n^2) - this occurs if the pivot point is either the first or the last item in the collection (because we're not taking advantage of the **divide and conquer** technique). However, on average it's O(n log(n)). It's space complexity is O(log(n)).

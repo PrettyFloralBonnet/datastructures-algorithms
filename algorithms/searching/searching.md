@@ -10,4 +10,6 @@ BFS is useful for finding **the shortest path** between the two nodes.
 ## Depth First Search
 This search follows a single branch of a tree/graph down as many levels as possible, until the target value is found or it reaches the end (a leaf node). Then it goes back up the branch until it finds an ancestor with an unexplored child, and goes down again, until it traverses the entire structure (or the target value is found). It has a lower memory requirement than BFS.
 
+DFS can be approached in three distinct ways: **InOrder**, **PreOrder** and **PostOrder**, which all differ in terms of which nodes are traversed first.
+
 DFS is useful for determining **if a path exists** between two nodes.

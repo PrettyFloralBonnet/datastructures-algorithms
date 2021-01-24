@@ -26,7 +26,7 @@ class BinarySearchTree {
                         return this;
                     }
                     currentNode = currentNode.left
-                } else {  // values equal to current value go to the right
+                } else {
                     if (!currentNode.right) {
                         currentNode.right = newNode;
                         return this;
@@ -142,7 +142,6 @@ class BinarySearchTree {
         if (!queue.length) {
             return list;
         }
-
         let currentNode = queue.shift();
         list.push(currentNode.value);
 
@@ -152,11 +151,53 @@ class BinarySearchTree {
         if (currentNode.right) {
             queue.push(currentNode.right);
         }
-
         return this.breadthFirstSearchRecursive(queue, list);
     }
 
-    depthFirstSearch() {
+    _traverseInOrder(node, list) {
+        if (node.left) {
+            this._traverseInOrder(node.left, list);
+        }
+        list.push(node.value);
 
+        if (node.right) {
+            this._traverseInOrder(node.right, list);
+        }
+        return list;
+    }
+
+    depthFirstSearchInOrder() {
+        return this._traverseInOrder(this.root, []);
+    }
+
+    _traversePreOrder(node, list) {
+        list.push(node.value);
+
+        if (node.left) {
+            this._traversePreOrder(node.left, list);
+        }
+        if (node.right) {
+            this._traversePreOrder(node.right, list);
+        }
+        return list;
+    }
+
+    depthFirstSearchPreOrder() {
+        return this._traversePreOrder(this.root, []);
+    }
+
+    _traversePostOrder(node, list) {
+        if (node.left) {
+            this._traversePostOrder(node.left, list);
+        }
+        if (node.right) {
+            this._traversePostOrder(node.right, list);
+        }
+        list.push(node.value);
+        return list;
+    }
+
+    depthFirstSearchPostOrder() {
+        return this._traversePostOrder(this.root, []);
     }
 }

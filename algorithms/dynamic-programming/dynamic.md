@@ -3,3 +3,5 @@ Dynamic programming is basically a buzzword for an **optimization technique** th
 
 ## Memoization
 **Memoization** is a specific form of caching that involves caching the return value of a function based on its parameters. It's good practice to have the cache live in the memory of the function itself (to avoid pollution of the global namespace).
+
+If a problem can be divided into a set of repetitive subproblems, thus prompting a possible recursive solution, solutions to the subproblems can be memoized, greatly improving overall efficiency.

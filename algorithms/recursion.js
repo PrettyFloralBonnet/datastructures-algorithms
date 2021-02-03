@@ -36,6 +36,28 @@ function fibonacciIterative(index) {
     return thirdNumber;
 }
 
+function fibonacciMemoized() {
+    let cache = {};
+    return function fib(n) {
+        if (n in cache) {
+            return cache[n];
+        } else {
+            if (n < 2) {
+                return n;
+            } else {
+                cache[n] = fib(n - 1) + fib(n - 2);
+                return cache[n];
+            }
+        }
+    }
+}
+
+const fibMem = fibonacciMemoized();
+
+console.log(fibMem(20));
+console.log(fibMem(20));
+
+
 // reverse a string
 
 function reverseString(str) {

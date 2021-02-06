@@ -1,3 +1,6 @@
-An overview of data structures and algorithms, as laid out in [this course](https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/) by [Andrei Neagoie](https://github.com/aneagoie).
+An overview of data structures and algorithms, following [this course](https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/).
 
-This is a work in progress. Problem solutions are in JavaScript, but I'll be reimplementing them (and adding new ones) in python as I go along.
+## Table of contents
+1. [The Big O](../tree/master/big-o-notation "The Big O")
+2. [Data structures](../tree/master/datastructures "Data structures")
+3. [Algorithms](../tree/master/algorithms "Algorithms")
